@@ -1,0 +1,29 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block titulo %}
+
+Aquí puedes registrar un alumno en nuestra institución. 
+
+{% endblock %}
+
+{% block parrafo %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+{{form}}
+
+<input type="submit" value="Guardar">
+
+</form>
+
+<br>
+
+Lista de alumnos:
+
+<br>
+
+<button>
+    <a href="{% url 'alumnos_leer' %}"> Ver </a>
+</button>
+
+{% endblock %}

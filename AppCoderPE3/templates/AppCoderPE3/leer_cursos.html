@@ -1,0 +1,18 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block parrafo %}
+
+    {% for curso in cursos %}
+
+    <p>Nombre: {{curso.nombre}} --- Camada: {{curso.camada}}</p>
+
+    <button>
+        <a href="{% url 'curso_eliminar' curso.nombre %}"> Eliminar </a>
+    </button>
+    <button>
+        <a href="{% url 'curso_editar' curso.nombre %}"> Editar </a>
+    </button>
+       
+    {% endfor %}
+
+{% endblock %}

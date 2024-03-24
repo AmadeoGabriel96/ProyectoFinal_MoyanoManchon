@@ -1,0 +1,19 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block parrafo %}
+
+    {% for alumno in alumnos %}
+
+    <p>Nombre: {{alumno.nombre}} --- Alumno: {{alumno.apellido}} --- 
+       Edad: {{alumno.edad}} --- Email: {{alumno.email}}</p>
+
+    <button>
+        <a href="{% url 'alumno_eliminar' alumno.nombre %}"> Eliminar </a>
+    </button>
+    <button>
+        <a href="{% url 'alumno_editar' alumno.nombre %}"> Editar </a>
+    </button>
+           
+    {% endfor %}
+
+{% endblock %}

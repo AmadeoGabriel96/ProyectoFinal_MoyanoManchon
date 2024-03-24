@@ -1,0 +1,13 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block parrafo %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+{{form}}    
+
+<input type="submit" value="Iniciar Sesión">
+
+</form>
+
+{% endblock %}

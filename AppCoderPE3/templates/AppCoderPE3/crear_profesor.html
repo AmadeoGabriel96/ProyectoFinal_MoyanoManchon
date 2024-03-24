@@ -1,0 +1,29 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block titulo %}
+
+Aquí puedes registrar un profesor en nuestra institución. 
+
+{% endblock %}
+
+{% block parrafo %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+{{form}}
+
+<input type="submit" value="Guardar">
+
+</form>
+
+<br>
+
+Lista de profesores:
+
+<br>
+
+<button>
+    <a href="{% url 'profes_leer' %}"> Ver </a>
+</button>
+
+{% endblock %}

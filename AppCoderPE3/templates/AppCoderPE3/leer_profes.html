@@ -1,0 +1,20 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block parrafo %}
+
+    {% for profesor in profes %}
+
+    <p>Nombre: {{profesor.nombre}} --- Apellido: {{profesor.apellido}} ---
+       Edad: {{profesor.edad}} --- Profesión: {{profesor.profesión}} --- 
+       Email: {{profesor.email}}</p>
+
+    <button>
+        <a href="{% url 'profe_eliminar' profesor.nombre %}"> Eliminar </a>
+    </button>
+    <button>
+        <a href="{% url 'profe_editar' profesor.nombre %}"> Editar </a>
+    </button>
+       
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "AppCoderPE3/padre.html" %}
+
+{% block titulo %}
+
+Bienvenidos a la academia.
+
+{% endblock %}
+
+{% block parrafo %}
+
+    <p>Estamos buscando la camada: {{camada}}</p>
+
+    {% for curso in cursos %}
+
+    <p>Nombre: {{curso.nombre}} --- Camada: {{curso.camada}}</p>
+       
+    {% endfor %}
+
+{% endblock %}
