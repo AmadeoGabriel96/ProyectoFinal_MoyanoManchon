@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 urlpatterns = [
     path("login/", iniciar_sesion, name="Iniciar Sesion"),
     path("about_me/", sobre_mi, name="Sobre Mi"),
+    path("contact/", contacto, name="Contacto"),
 
     path("singup/", registrar, name="Registrar"),
     path("logout/", cerrar_sesion, name="Cerrar Sesion"),
