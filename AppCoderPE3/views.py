@@ -17,7 +17,11 @@ def inicio(request):
 
 def sobre_mi(request):
 
-    return render(request, "AppCoderPE3/sobre_mi.html")    
+    return render(request, "AppCoderPE3/sobre_mi.html") 
+
+def contacto(request):
+
+    return render(request, "AppCoderPE3/contacto.html") 
 
 def iniciar_sesion(request):
     
