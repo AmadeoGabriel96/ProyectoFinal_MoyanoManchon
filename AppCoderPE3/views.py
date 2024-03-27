@@ -144,15 +144,26 @@ def crear_curso(request):
 
     if request.method =="POST":
 
-        curso_nuevo = Curso(
-            nombre=request.POST["nombre"],
-            camada=request.POST["camada"])
+        formulario = CursoFormulario(request.POST)
 
-        curso_nuevo.save()
+        if formulario.is_valid():
 
-        return render(request,"AppCoderPE3/inicio.html")
+            info_dic = formulario.cleaned_data
 
-    return render(request, "AppCoderPE3/crear_curso.html")  
+            curso_nuevo = Curso(
+                nombre=info_dic["nombre"],
+                camada=info_dic["camada"]
+                )
+
+            curso_nuevo.save()
+
+        return render(request,"AppCoderPE3/crear_curso.html")
+
+    else:
+
+        formulario = CursoFormulario()    
+
+    return render(request, "AppCoderPE3/crear_curso.html", {"form":formulario})  
 
 @login_required
 def crear_profesor(request):
