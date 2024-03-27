@@ -1,4 +1,4 @@
-{% extends "AppCoderPE3//padre.html" %}
+{% extends "AppCoderPE3/padre.html" %}
 
 {% block titulo %}
 
@@ -8,13 +8,12 @@ Aquí puedes registrar un curso en nuestra institución.
 
 {% block parrafo %}
 
-<form action="/AppCoderPE3/" method="POST"> {% csrf_token %}
+<form action="" method="POST"> {% csrf_token %}
 
-    <p> Nombre: <input type="text" name="nombre"></p>
-    <p> Camada: <input type="number" name="camada"></p>
+{{form}}
 
-    <input type="submit" value="Guardar">
-    
+<input type="submit" value="Guardar">
+
 </form>
 
 <br>
