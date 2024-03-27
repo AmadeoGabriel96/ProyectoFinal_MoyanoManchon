@@ -32,6 +32,8 @@ Login en caso de haber cerrado sesión
 
 ## Link al video explicativo del proyecto: 
 
+https://drive.google.com/file/d/1zJQ-Iz6wv7XOog27OVny6g4qnvFlEVYb/view?usp=sharing
+
 
 
 
