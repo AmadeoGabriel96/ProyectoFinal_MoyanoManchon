@@ -109,25 +109,23 @@ def editar_usuario(request):
 @login_required
 def agregar_avatar(request):
 
-    formulario = AvatarFormulario(request.POST, request.FILES)
+    if request.method == "POST":
 
-    if request.method =="POST":
+        formulario = AvatarFormulario(request.POST, request.FILES)
 
-        info_dic = formulario.cleaned_data()
+        if formulario.is_valid():
 
-        usuario_actual = User.objects.GET(username=request.user)
-        nuevo_avatar = Avatar(usuario=usuario_actual, imagen=info_dic["imagen"])
+            usuario_actual = request.user
+            nuevo_avatar = Avatar(usuario=usuario_actual, imagen=formulario.cleaned_data["imagen"])
 
-        nuevo_avatar.save()
+            nuevo_avatar.save()
 
-        return render(request,"AppCoderPE3/inicio.html")
-
+            return render(request, "AppCoderPE3/inicio.html")
     else:
-
-        formulario = AvatarFormulario()    
-
-    return render(request, "AppCoderPE3/nuevo_avatar.html", {"form":formulario})
-
+        
+        formulario = AvatarFormulario()
+    
+    return render(request, "AppCoderPE3/nuevo_avatar.html", {"form": formulario})
 
 def curso(request):
 
