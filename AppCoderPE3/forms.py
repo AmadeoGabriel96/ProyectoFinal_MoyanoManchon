@@ -24,7 +24,11 @@ class AlumnoFormulario(forms.Form):
     nombre = forms.CharField(max_length=30)
     apellido = forms.CharField(max_length=30)
     edad = forms.IntegerField()
-    email = forms.EmailField()    
+    email = forms.EmailField()  
+
+class AvatarFormulario(forms.Form):
+
+    imagen = forms.ImageField()  
 
 class RegistroUsuario(UserCreationForm):
 
